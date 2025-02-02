@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHN SMS BOMBER</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            position: absolute;
+        }
+    </style>
+    <script>
+        document.addEventListener("contextmenu", event => event.preventDefault());
+        document.addEventListener("keydown", event => {
+            if (event.ctrlKey && (event.key === "u" || event.key === "s" || event.key === "i" || event.key === "j" || event.key === "c")) {
+                event.preventDefault();
+            }
+            if (event.keyCode === 123) {
+                event.preventDefault();
+            }
+        });
+        
+        setInterval(() => {
+            if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
+                document.body.innerHTML = "Access Denied";
+            }
+        }, 1000);
+    </script>
+</head>
+<body>
+    <iframe src="https://abir.news" allowfullscreen></iframe>
+</body>
+</html>
